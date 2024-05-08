@@ -1,0 +1,20 @@
+{
+  "in_folder": "test/INPUT",
+  "out_folder": "test/OUTPUT",
+  "max_workers": 4,
+  "processed": [
+    {
+      "type": "sharp",
+      "diapason_white": 2,
+      "diapason_black": -1,
+      "high_input": 255,
+      "low_input": 0,
+      "gamma": 1.0,
+      "cenny": true
+    },
+    {
+      "type": "screentone",
+      "dot_size": 7
+    }
+  ]
+}

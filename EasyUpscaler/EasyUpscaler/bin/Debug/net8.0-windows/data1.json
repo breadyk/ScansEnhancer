@@ -1,0 +1,5 @@
+{
+  "modelPath": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\bin\\Debug\\net8.0-windows\\Resources\\srcore\\models\\4x_IllustrationJaNai_V1_DAT2_190k.pth",
+  "inputFolder": "D:\\test\\exper",
+  "outputFolder": "D:\\test\\output"
+}
