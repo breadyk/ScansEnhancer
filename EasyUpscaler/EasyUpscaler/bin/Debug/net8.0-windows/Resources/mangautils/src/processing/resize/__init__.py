@@ -1,1 +1,0 @@
-from .resize import Resize
