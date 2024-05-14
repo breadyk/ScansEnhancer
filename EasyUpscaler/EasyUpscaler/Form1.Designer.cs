@@ -1056,7 +1056,8 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ScansEnchanser";
+            Text = "ScansEnhancer";
+            Load += Form1_Load;
             FolderSelection.ResumeLayout(false);
             FolderSelection.PerformLayout();
             Model1.ResumeLayout(false);

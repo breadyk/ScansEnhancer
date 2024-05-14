@@ -1,5 +1,5 @@
 {
-  "modelPath": "DD:\\test\\models",
+  "modelPath": "D:\\test\\models\\4x_DWTP_DS_dat2_v3_2.pth",
   "inputFolder": "D:\\test\\exper",
   "outputFolder": "D:\\test\\output",
   "tileSize": 256
