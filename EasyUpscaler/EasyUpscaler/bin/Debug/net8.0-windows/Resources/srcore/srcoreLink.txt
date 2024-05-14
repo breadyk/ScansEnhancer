@@ -1,1 +1,1 @@
-https://github.com/umzi2/manga_utils
+https://github.com/umzi2/sr-core
