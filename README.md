@@ -1,7 +1,10 @@
 # Scans Enhanser
 ![MainMenu](https://i.ibb.co/jTGzxwz/2024-05-15-021112420.png)
-## Description
-App that makes enhancing manga/comic scans easier by combining various upscaling models.
+>App that makes enhancing manga/comic scans easier by combining various upscaling models.
+## GPU Support
+It's highly recommended to use this on Nvidia GPU as it's CUDA cores makes processing MUCH faster.
+
+If you have a non-Nvidia GPU, such as AMD Radeon or Intel ARC, you'll have to do all the calculations on your CPU.
 ## Known issues
 * The program works with paths containing only Latin characters.
 ## Credits
@@ -23,3 +26,5 @@ Used models:
   * [4x_DWTP_DS_dat2_v3_2](https://openmodeldb.info/models/4x-DWTP-DS-dat2-v3-2)
 * end user license agreement#9756
   * [4x-eula-digimanga-bw-v2-nc1](https://openmodeldb.info/models/4x-eula-digimanga-bw-v2-nc1)
+  
+>All used models can be downloaded in a single **.zip** file from [here](https://drive.google.com/file/d/1JHkPYDXUDaUeFDwv4cyJNyh_E04Orivv/view?usp=sharing).
