@@ -1,20 +1,20 @@
 {
-  "in_folder": "D:\\test\\output",
+  "in_folder": "D:\\test\\screntonetest",
   "out_folder": "D:\\test\\output",
   "paralel": false,
   "processed": [
     {
+      "type": "screentone",
+      "dot_size": 12
+    },
+    {
       "type": "sharp",
       "diapason_white": 2,
       "diapason_black": -1,
-      "high_input": 255,
-      "low_input": 0,
+      "high_input": 248,
+      "low_input": 10,
       "gamma": 1.0,
       "cenny": true
-    },
-    {
-      "type": "screentone",
-      "dot_size": 7
     }
   ]
 }

@@ -42,7 +42,9 @@
             Model3 = new GroupBox();
             DWTPcheck = new CheckBox();
             Description3 = new Label();
+            tilesize = new ComboBox();
             Model4 = new GroupBox();
+            SharpCheck = new CheckBox();
             groupBox4 = new GroupBox();
             DiaBlack = new TextBox();
             DiaBlackBar = new TrackBar();
@@ -55,9 +57,12 @@
             groupBox1 = new GroupBox();
             highInput = new TextBox();
             highBar = new TrackBar();
+            groupBox6 = new GroupBox();
+            DotSize = new TextBox();
+            DotSizeBar = new TrackBar();
             ScreentoneCheck = new CheckBox();
-            Description4 = new Label();
             GeneralModels = new GroupBox();
+            tiletext = new Label();
             Model9 = new GroupBox();
             MScaleCheck = new CheckBox();
             Description9 = new Label();
@@ -80,6 +85,27 @@
             groupBox5 = new GroupBox();
             label2 = new Label();
             label1 = new Label();
+            groupBox7 = new GroupBox();
+            SizeCheck = new TextBox();
+            groupBox8 = new GroupBox();
+            InterBox = new ComboBox();
+            groupBox9 = new GroupBox();
+            WidthCheck = new ComboBox();
+            groupBox10 = new GroupBox();
+            PercentBox = new TextBox();
+            groupBox11 = new GroupBox();
+            SpreadSize = new TextBox();
+            groupBox12 = new GroupBox();
+            SpreadCheck = new ComboBox();
+            groupBox13 = new GroupBox();
+            ResizeCheck = new CheckBox();
+            Description10 = new Label();
+            groupBox14 = new GroupBox();
+            Description4 = new Label();
+            groupBox15 = new GroupBox();
+            label4 = new Label();
+            label5 = new Label();
+            DownloadButton = new Button();
             FolderSelection.SuspendLayout();
             Model1.SuspendLayout();
             Model2.SuspendLayout();
@@ -93,6 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)lowBar).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)highBar).BeginInit();
+            groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DotSizeBar).BeginInit();
             GeneralModels.SuspendLayout();
             Model9.SuspendLayout();
             Model7.SuspendLayout();
@@ -101,6 +129,15 @@
             Model5.SuspendLayout();
             OutputFolderSelection.SuspendLayout();
             groupBox5.SuspendLayout();
+            groupBox7.SuspendLayout();
+            groupBox8.SuspendLayout();
+            groupBox9.SuspendLayout();
+            groupBox10.SuspendLayout();
+            groupBox11.SuspendLayout();
+            groupBox12.SuspendLayout();
+            groupBox13.SuspendLayout();
+            groupBox14.SuspendLayout();
+            groupBox15.SuspendLayout();
             SuspendLayout();
             // 
             // FolderSelection
@@ -114,7 +151,6 @@
             FolderSelection.TabIndex = 1;
             FolderSelection.TabStop = false;
             FolderSelection.Text = "Выберите папку с нужными страницами";
-            FolderSelection.Enter += groupBox1_Enter;
             // 
             // FolderBox
             // 
@@ -123,7 +159,6 @@
             FolderBox.Name = "FolderBox";
             FolderBox.Size = new Size(641, 21);
             FolderBox.TabIndex = 2;
-            FolderBox.TextChanged += FolderBox_TextChanged;
             // 
             // OpenButton
             // 
@@ -147,7 +182,6 @@
             Model1.TabIndex = 2;
             Model1.TabStop = false;
             Model1.Text = "IllustrationJaNai V1";
-            Model1.Enter += groupBox2_Enter;
             // 
             // JaNaiCheck
             // 
@@ -170,7 +204,6 @@
             Description1.Size = new Size(274, 20);
             Description1.TabIndex = 0;
             Description1.Text = "4x Апскейл + шумодав. Только для цвета.";
-            Description1.Click += label1_Click_1;
             // 
             // Model2
             // 
@@ -208,6 +241,7 @@
             // 
             // LanguageButton
             // 
+            LanguageButton.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             LanguageButton.Location = new Point(12, 613);
             LanguageButton.Name = "LanguageButton";
             LanguageButton.Size = new Size(75, 23);
@@ -249,30 +283,51 @@
             Description3.Size = new Size(296, 20);
             Description3.TabIndex = 0;
             Description3.Text = "4х Апскейл ч/б. Рекомендуется для качества.";
-            Description3.Click += Description3_Click;
+            // 
+            // tilesize
+            // 
+            tilesize.DropDownStyle = ComboBoxStyle.DropDownList;
+            tilesize.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            tilesize.FormattingEnabled = true;
+            tilesize.ImeMode = ImeMode.NoControl;
+            tilesize.Items.AddRange(new object[] { "256", "512" });
+            tilesize.Location = new Point(636, 23);
+            tilesize.Name = "tilesize";
+            tilesize.Size = new Size(92, 26);
+            tilesize.TabIndex = 11;
             // 
             // Model4
             // 
+            Model4.Controls.Add(SharpCheck);
             Model4.Controls.Add(groupBox4);
             Model4.Controls.Add(groupBox3);
             Model4.Controls.Add(groupBox2);
             Model4.Controls.Add(groupBox1);
-            Model4.Controls.Add(ScreentoneCheck);
-            Model4.Controls.Add(Description4);
             Model4.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            Model4.Location = new Point(752, 12);
+            Model4.Location = new Point(752, 198);
             Model4.Name = "Model4";
-            Model4.Size = new Size(344, 445);
+            Model4.Size = new Size(344, 409);
             Model4.TabIndex = 0;
             Model4.TabStop = false;
-            Model4.Text = "Screentone Maker";
+            Model4.Text = "Sharp";
+            // 
+            // SharpCheck
+            // 
+            SharpCheck.AutoSize = true;
+            SharpCheck.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            SharpCheck.Location = new Point(6, 379);
+            SharpCheck.Name = "SharpCheck";
+            SharpCheck.Size = new Size(120, 24);
+            SharpCheck.TabIndex = 8;
+            SharpCheck.Text = "Использовать";
+            SharpCheck.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(DiaBlack);
             groupBox4.Controls.Add(DiaBlackBar);
             groupBox4.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox4.Location = new Point(6, 321);
+            groupBox4.Location = new Point(6, 292);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(332, 81);
             groupBox4.TabIndex = 7;
@@ -287,12 +342,14 @@
             DiaBlack.Size = new Size(41, 26);
             DiaBlack.TabIndex = 3;
             DiaBlack.Text = "-1";
+            DiaBlack.TextAlign = HorizontalAlignment.Center;
             DiaBlack.TextChanged += DiaBlack_TextChanged;
             // 
             // DiaBlackBar
             // 
             DiaBlackBar.LargeChange = 0;
             DiaBlackBar.Location = new Point(6, 31);
+            DiaBlackBar.Maximum = 255;
             DiaBlackBar.Minimum = -1;
             DiaBlackBar.Name = "DiaBlackBar";
             DiaBlackBar.Size = new Size(273, 45);
@@ -307,7 +364,7 @@
             groupBox3.Controls.Add(DiaWhite);
             groupBox3.Controls.Add(DiaWhiteBar);
             groupBox3.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox3.Location = new Point(6, 234);
+            groupBox3.Location = new Point(6, 205);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(332, 81);
             groupBox3.TabIndex = 6;
@@ -322,12 +379,14 @@
             DiaWhite.Size = new Size(41, 26);
             DiaWhite.TabIndex = 3;
             DiaWhite.Text = "2";
+            DiaWhite.TextAlign = HorizontalAlignment.Center;
             DiaWhite.TextChanged += DiaWhite_TextChanged;
             // 
             // DiaWhiteBar
             // 
             DiaWhiteBar.LargeChange = 0;
             DiaWhiteBar.Location = new Point(6, 31);
+            DiaWhiteBar.Maximum = 255;
             DiaWhiteBar.Minimum = -1;
             DiaWhiteBar.Name = "DiaWhiteBar";
             DiaWhiteBar.Size = new Size(273, 45);
@@ -342,7 +401,7 @@
             groupBox2.Controls.Add(lowInput);
             groupBox2.Controls.Add(lowBar);
             groupBox2.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox2.Location = new Point(6, 147);
+            groupBox2.Location = new Point(6, 118);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(332, 81);
             groupBox2.TabIndex = 5;
@@ -357,6 +416,7 @@
             lowInput.Size = new Size(41, 26);
             lowInput.TabIndex = 3;
             lowInput.Text = "0";
+            lowInput.TextAlign = HorizontalAlignment.Center;
             lowInput.TextChanged += lowInput_TextChanged;
             // 
             // lowBar
@@ -376,7 +436,7 @@
             groupBox1.Controls.Add(highInput);
             groupBox1.Controls.Add(highBar);
             groupBox1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox1.Location = new Point(6, 60);
+            groupBox1.Location = new Point(6, 31);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(332, 81);
             groupBox1.TabIndex = 4;
@@ -391,6 +451,7 @@
             highInput.Size = new Size(41, 26);
             highInput.TabIndex = 3;
             highInput.Text = "255";
+            highInput.TextAlign = HorizontalAlignment.Center;
             highInput.TextChanged += highInput_TextChanged;
             // 
             // highBar
@@ -406,30 +467,58 @@
             highBar.Value = 255;
             highBar.Scroll += trackBar1_Scroll;
             // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(DotSize);
+            groupBox6.Controls.Add(DotSizeBar);
+            groupBox6.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox6.Location = new Point(6, 63);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(332, 81);
+            groupBox6.TabIndex = 8;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Размер точек";
+            // 
+            // DotSize
+            // 
+            DotSize.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            DotSize.Location = new Point(285, 31);
+            DotSize.Name = "DotSize";
+            DotSize.Size = new Size(41, 26);
+            DotSize.TabIndex = 3;
+            DotSize.Text = "7";
+            DotSize.TextAlign = HorizontalAlignment.Center;
+            DotSize.TextChanged += DotSize_TextChanged;
+            // 
+            // DotSizeBar
+            // 
+            DotSizeBar.LargeChange = 0;
+            DotSizeBar.Location = new Point(6, 31);
+            DotSizeBar.Maximum = 100;
+            DotSizeBar.Minimum = 1;
+            DotSizeBar.Name = "DotSizeBar";
+            DotSizeBar.Size = new Size(273, 45);
+            DotSizeBar.TabIndex = 2;
+            DotSizeBar.TickFrequency = 15;
+            DotSizeBar.TickStyle = TickStyle.None;
+            DotSizeBar.Value = 7;
+            DotSizeBar.Scroll += DotSizeBar_Scroll;
+            // 
             // ScreentoneCheck
             // 
             ScreentoneCheck.AutoSize = true;
             ScreentoneCheck.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            ScreentoneCheck.Location = new Point(6, 408);
+            ScreentoneCheck.Location = new Point(6, 150);
             ScreentoneCheck.Name = "ScreentoneCheck";
             ScreentoneCheck.Size = new Size(120, 24);
             ScreentoneCheck.TabIndex = 1;
             ScreentoneCheck.Text = "Использовать";
             ScreentoneCheck.UseVisualStyleBackColor = true;
             // 
-            // Description4
-            // 
-            Description4.AutoSize = true;
-            Description4.Font = new Font("Arial Narrow", 12F);
-            Description4.ImageAlign = ContentAlignment.MiddleLeft;
-            Description4.Location = new Point(6, 28);
-            Description4.Name = "Description4";
-            Description4.Size = new Size(251, 20);
-            Description4.TabIndex = 0;
-            Description4.Text = "Добавляет скринтоны. Только для ч/б.";
-            // 
             // GeneralModels
             // 
+            GeneralModels.Controls.Add(tiletext);
+            GeneralModels.Controls.Add(tilesize);
             GeneralModels.Controls.Add(Model9);
             GeneralModels.Controls.Add(Model7);
             GeneralModels.Controls.Add(Model6);
@@ -445,7 +534,18 @@
             GeneralModels.TabIndex = 6;
             GeneralModels.TabStop = false;
             GeneralModels.Text = "Модели";
-            GeneralModels.Enter += groupBox2_Enter_1;
+            // 
+            // tiletext
+            // 
+            tiletext.AutoSize = true;
+            tiletext.Font = new Font("Arial Narrow", 12F);
+            tiletext.ImageAlign = ContentAlignment.MiddleLeft;
+            tiletext.Location = new Point(464, 25);
+            tiletext.Name = "tiletext";
+            tiletext.Size = new Size(166, 20);
+            tiletext.TabIndex = 2;
+            tiletext.Text = "Выберите размер плитки";
+            tiletext.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Model9
             // 
@@ -620,9 +720,9 @@
             // LaunchButton
             // 
             LaunchButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            LaunchButton.Location = new Point(226, 95);
+            LaunchButton.Location = new Point(6, 95);
             LaunchButton.Name = "LaunchButton";
-            LaunchButton.Size = new Size(112, 43);
+            LaunchButton.Size = new Size(348, 43);
             LaunchButton.TabIndex = 3;
             LaunchButton.Text = "Запуск";
             LaunchButton.UseVisualStyleBackColor = true;
@@ -665,9 +765,9 @@
             groupBox5.Controls.Add(label1);
             groupBox5.Controls.Add(LaunchButton);
             groupBox5.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox5.Location = new Point(752, 463);
+            groupBox5.Location = new Point(1102, 496);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(344, 144);
+            groupBox5.Size = new Size(360, 144);
             groupBox5.TabIndex = 7;
             groupBox5.TabStop = false;
             groupBox5.Text = "Меню запуска";
@@ -694,13 +794,258 @@
             label1.TabIndex = 8;
             label1.Text = "После нажатия \"Запуск\", не закрывайте программу,\r\nпока не появится окно о завершении процесса.";
             // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(SizeCheck);
+            groupBox7.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox7.Location = new Point(6, 60);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(153, 81);
+            groupBox7.TabIndex = 5;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Размер";
+            // 
+            // SizeCheck
+            // 
+            SizeCheck.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SizeCheck.Location = new Point(6, 31);
+            SizeCheck.Name = "SizeCheck";
+            SizeCheck.Size = new Size(141, 26);
+            SizeCheck.TabIndex = 3;
+            SizeCheck.Text = "2000";
+            SizeCheck.TextAlign = HorizontalAlignment.Center;
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(InterBox);
+            groupBox8.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox8.Location = new Point(165, 60);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(187, 81);
+            groupBox8.TabIndex = 9;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "Интерполяция";
+            // 
+            // InterBox
+            // 
+            InterBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            InterBox.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            InterBox.FormattingEnabled = true;
+            InterBox.ImeMode = ImeMode.NoControl;
+            InterBox.Items.AddRange(new object[] { "linear", "nearest", "cubic_catrom", "cubic_mitchell", "cubic_bspline", "lanczos", "gauss", "lagrange" });
+            InterBox.Location = new Point(6, 31);
+            InterBox.Name = "InterBox";
+            InterBox.Size = new Size(175, 26);
+            InterBox.TabIndex = 10;
+            // 
+            // groupBox9
+            // 
+            groupBox9.Controls.Add(WidthCheck);
+            groupBox9.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox9.Location = new Point(6, 147);
+            groupBox9.Name = "groupBox9";
+            groupBox9.Size = new Size(153, 81);
+            groupBox9.TabIndex = 11;
+            groupBox9.TabStop = false;
+            groupBox9.Text = "По ширине?";
+            // 
+            // WidthCheck
+            // 
+            WidthCheck.DropDownStyle = ComboBoxStyle.DropDownList;
+            WidthCheck.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            WidthCheck.FormattingEnabled = true;
+            WidthCheck.Items.AddRange(new object[] { "true", "false" });
+            WidthCheck.Location = new Point(6, 31);
+            WidthCheck.Name = "WidthCheck";
+            WidthCheck.Size = new Size(141, 26);
+            WidthCheck.TabIndex = 10;
+            // 
+            // groupBox10
+            // 
+            groupBox10.Controls.Add(PercentBox);
+            groupBox10.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox10.Location = new Point(165, 147);
+            groupBox10.Name = "groupBox10";
+            groupBox10.Size = new Size(187, 81);
+            groupBox10.TabIndex = 12;
+            groupBox10.TabStop = false;
+            groupBox10.Text = "Проценты";
+            // 
+            // PercentBox
+            // 
+            PercentBox.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            PercentBox.Location = new Point(6, 31);
+            PercentBox.Name = "PercentBox";
+            PercentBox.Size = new Size(175, 26);
+            PercentBox.TabIndex = 4;
+            PercentBox.Text = "100";
+            PercentBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // groupBox11
+            // 
+            groupBox11.Controls.Add(SpreadSize);
+            groupBox11.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox11.Location = new Point(165, 234);
+            groupBox11.Name = "groupBox11";
+            groupBox11.Size = new Size(187, 81);
+            groupBox11.TabIndex = 14;
+            groupBox11.TabStop = false;
+            groupBox11.Text = "Размер Разворота";
+            // 
+            // SpreadSize
+            // 
+            SpreadSize.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SpreadSize.Location = new Point(6, 31);
+            SpreadSize.Name = "SpreadSize";
+            SpreadSize.Size = new Size(175, 26);
+            SpreadSize.TabIndex = 4;
+            SpreadSize.Text = "2800";
+            SpreadSize.TextAlign = HorizontalAlignment.Center;
+            // 
+            // groupBox12
+            // 
+            groupBox12.Controls.Add(SpreadCheck);
+            groupBox12.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox12.Location = new Point(6, 234);
+            groupBox12.Name = "groupBox12";
+            groupBox12.Size = new Size(153, 81);
+            groupBox12.TabIndex = 13;
+            groupBox12.TabStop = false;
+            groupBox12.Text = "Разворот?";
+            // 
+            // SpreadCheck
+            // 
+            SpreadCheck.DropDownStyle = ComboBoxStyle.DropDownList;
+            SpreadCheck.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SpreadCheck.FormattingEnabled = true;
+            SpreadCheck.Items.AddRange(new object[] { "true", "false" });
+            SpreadCheck.Location = new Point(6, 31);
+            SpreadCheck.Name = "SpreadCheck";
+            SpreadCheck.Size = new Size(141, 26);
+            SpreadCheck.TabIndex = 10;
+            // 
+            // groupBox13
+            // 
+            groupBox13.Controls.Add(ResizeCheck);
+            groupBox13.Controls.Add(groupBox12);
+            groupBox13.Controls.Add(Description10);
+            groupBox13.Controls.Add(groupBox11);
+            groupBox13.Controls.Add(groupBox7);
+            groupBox13.Controls.Add(groupBox8);
+            groupBox13.Controls.Add(groupBox10);
+            groupBox13.Controls.Add(groupBox9);
+            groupBox13.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox13.Location = new Point(1102, 12);
+            groupBox13.Name = "groupBox13";
+            groupBox13.Size = new Size(360, 352);
+            groupBox13.TabIndex = 9;
+            groupBox13.TabStop = false;
+            groupBox13.Text = "Resize";
+            // 
+            // ResizeCheck
+            // 
+            ResizeCheck.AutoSize = true;
+            ResizeCheck.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            ResizeCheck.Location = new Point(6, 321);
+            ResizeCheck.Name = "ResizeCheck";
+            ResizeCheck.Size = new Size(120, 24);
+            ResizeCheck.TabIndex = 1;
+            ResizeCheck.Text = "Использовать";
+            ResizeCheck.UseVisualStyleBackColor = true;
+            ResizeCheck.CheckedChanged += ResizeCheck_CheckedChanged;
+            // 
+            // Description10
+            // 
+            Description10.AutoSize = true;
+            Description10.Font = new Font("Arial Narrow", 12F);
+            Description10.ImageAlign = ContentAlignment.MiddleLeft;
+            Description10.Location = new Point(6, 28);
+            Description10.Name = "Description10";
+            Description10.Size = new Size(195, 20);
+            Description10.TabIndex = 0;
+            Description10.Text = "Меняет размер изображения.";
+            // 
+            // groupBox14
+            // 
+            groupBox14.BackColor = SystemColors.Control;
+            groupBox14.Controls.Add(Description4);
+            groupBox14.Controls.Add(groupBox6);
+            groupBox14.Controls.Add(ScreentoneCheck);
+            groupBox14.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox14.Location = new Point(752, 12);
+            groupBox14.Name = "groupBox14";
+            groupBox14.Size = new Size(344, 180);
+            groupBox14.TabIndex = 9;
+            groupBox14.TabStop = false;
+            groupBox14.Text = "Screentone Maker";
+            // 
+            // Description4
+            // 
+            Description4.AutoSize = true;
+            Description4.Font = new Font("Arial Narrow", 12F);
+            Description4.ImageAlign = ContentAlignment.MiddleLeft;
+            Description4.Location = new Point(6, 28);
+            Description4.Name = "Description4";
+            Description4.Size = new Size(251, 20);
+            Description4.TabIndex = 0;
+            Description4.Text = "Добавляет скринтоны. Только для ч/б.";
+            // 
+            // groupBox15
+            // 
+            groupBox15.Controls.Add(label4);
+            groupBox15.Controls.Add(label5);
+            groupBox15.Controls.Add(DownloadButton);
+            groupBox15.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox15.Location = new Point(1102, 370);
+            groupBox15.Name = "groupBox15";
+            groupBox15.Size = new Size(360, 120);
+            groupBox15.TabIndex = 10;
+            groupBox15.TabStop = false;
+            groupBox15.Text = "Скачать зависимости";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            label4.ImageAlign = ContentAlignment.MiddleLeft;
+            label4.Location = new Point(6, 28);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 20);
+            label4.TabIndex = 9;
+            label4.Text = "Важно!";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial Narrow", 12F);
+            label5.ImageAlign = ContentAlignment.MiddleLeft;
+            label5.Location = new Point(6, 48);
+            label5.Name = "label5";
+            label5.Size = new Size(314, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Перед началом работы установите зависимости.";
+            // 
+            // DownloadButton
+            // 
+            DownloadButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            DownloadButton.Location = new Point(6, 71);
+            DownloadButton.Name = "DownloadButton";
+            DownloadButton.Size = new Size(348, 43);
+            DownloadButton.TabIndex = 3;
+            DownloadButton.Text = "Скачать";
+            DownloadButton.UseVisualStyleBackColor = true;
+            DownloadButton.Click += button1_Click_3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1104, 644);
+            ClientSize = new Size(1471, 648);
+            Controls.Add(groupBox15);
+            Controls.Add(groupBox14);
+            Controls.Add(groupBox13);
             Controls.Add(groupBox5);
             Controls.Add(OutputFolderSelection);
             Controls.Add(GeneralModels);
@@ -734,7 +1079,11 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)highBar).EndInit();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DotSizeBar).EndInit();
             GeneralModels.ResumeLayout(false);
+            GeneralModels.PerformLayout();
             Model9.ResumeLayout(false);
             Model9.PerformLayout();
             Model7.ResumeLayout(false);
@@ -749,6 +1098,21 @@
             OutputFolderSelection.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
+            groupBox8.ResumeLayout(false);
+            groupBox9.ResumeLayout(false);
+            groupBox10.ResumeLayout(false);
+            groupBox10.PerformLayout();
+            groupBox11.ResumeLayout(false);
+            groupBox11.PerformLayout();
+            groupBox12.ResumeLayout(false);
+            groupBox13.ResumeLayout(false);
+            groupBox13.PerformLayout();
+            groupBox14.ResumeLayout(false);
+            groupBox14.PerformLayout();
+            groupBox15.ResumeLayout(false);
+            groupBox15.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -768,7 +1132,6 @@
         private Label Description3;
         private GroupBox Model4;
         private CheckBox ScreentoneCheck;
-        private Label Description4;
         private GroupBox GeneralModels;
         private Button LaunchButton;
         private GroupBox OutputFolderSelection;
@@ -804,5 +1167,32 @@
         private GroupBox groupBox5;
         private Label label1;
         private Label label2;
+        private GroupBox groupBox6;
+        private TextBox DotSize;
+        private TrackBar DotSizeBar;
+        private GroupBox groupBox7;
+        private TextBox SizeCheck;
+        private GroupBox groupBox8;
+        private ComboBox InterBox;
+        private GroupBox groupBox9;
+        private ComboBox WidthCheck;
+        private GroupBox groupBox10;
+        private GroupBox groupBox11;
+        private TextBox SpreadSize;
+        private GroupBox groupBox12;
+        private ComboBox SpreadCheck;
+        private TextBox PercentBox;
+        private GroupBox groupBox13;
+        private CheckBox ResizeCheck;
+        private Label Description10;
+        private CheckBox SharpCheck;
+        private GroupBox groupBox14;
+        private Label Description4;
+        private GroupBox groupBox15;
+        private Label label4;
+        private Label label5;
+        private Button DownloadButton;
+        private ComboBox tilesize;
+        private Label tiletext;
     }
 }

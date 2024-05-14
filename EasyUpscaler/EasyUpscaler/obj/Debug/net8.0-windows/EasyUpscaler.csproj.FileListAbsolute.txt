@@ -21,3 +21,6 @@ C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\obj\Debug\net8.0-windows\E
 C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\obj\Debug\net8.0-windows\EasyUpsc.6BB55293.Up2Date
 C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\obj\Debug\net8.0-windows\EasyUpscaler.Properties.Resources.resources
+C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\obj\Debug\net8.0-windows\EasyUpscaler.Form2.resources
+C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\bin\Debug\net8.0-windows\SharpCompress.dll
+C:\Users\banio\source\repos\EasyUpscaler\EasyUpscaler\bin\Debug\net8.0-windows\ZstdSharp.dll

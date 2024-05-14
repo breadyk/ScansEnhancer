@@ -6,6 +6,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Xml;
 using Formatting = System.Xml.Formatting;
+using System.Diagnostics.Eventing.Reader;
 
 namespace EasyUpscaler
 {
@@ -14,11 +15,6 @@ namespace EasyUpscaler
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         public int FileCount = new int();
@@ -34,32 +30,15 @@ namespace EasyUpscaler
             { FolderBox.Text = "Вы ничего не выбрали!"; }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FolderBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
         public int Lang = 1;
+
         private void LanguageButton_Click(object sender, EventArgs e)
         {
             if (Lang == 1)
             {
                 Lang = 0;
                 LanguageButton.Text = "Русский";
+                DownloadButton.Text = "Download";
                 LaunchButton.Text = "Launch";
                 FolderSelection.Text = "Select folder with pages";
                 OutputFolderSelection.Text = "Select output folder";
@@ -74,10 +53,13 @@ namespace EasyUpscaler
                 Description7.Text = "1x Denoiser b/w. For slightly damaged scans.";
                 Desсription8.Text = "1x Denoiser b/w. For very damaged scans.";
                 Description9.Text = "2x Upscaler b/w. Recomended for speed.\r\nUse without other models.";
+                Description10.Text = "Changes image's size.";
                 JaNaiCheck.Text = "Use";
                 DigiCheck.Text = "Use";
                 DWTPcheck.Text = "Use";
                 ScreentoneCheck.Text = "Use";
+                SharpCheck.Text = "Use";
+                ResizeCheck.Text = "Use";
                 SaiyajinCheck.Text = "Use";
                 MJHQcheck.Text = "Use";
                 MJHQPcheck.Text = "Use";
@@ -89,7 +71,18 @@ namespace EasyUpscaler
                 groupBox3.Text = "White diapason";
                 groupBox4.Text = "Black diapason";
                 groupBox5.Text = "Launch menu";
+                groupBox6.Text = "Dots' size";
+                groupBox7.Text = "Size";
+                groupBox8.Text = "Interpolation";
+                groupBox9.Text = "Width value?";
+                groupBox10.Text = "Percents";
+                groupBox12.Text = "Spread?";
+                groupBox11.Text = "Spread size";
+                groupBox15.Text = "Download dependencies";
+                tiletext.Text = "                 Select tile size";
                 label2.Text = "Attention!";
+                label4.Text = "Attention!";
+                label5.Text = "Install dependencies before running.";
                 label1.Text = "After pressing \"Launch\" do NOT close the program\r\nuntil completion window wouldn't appear.\r\n";
 
             }
@@ -97,6 +90,7 @@ namespace EasyUpscaler
             {
                 Lang = 1;
                 LanguageButton.Text = "English";
+                DownloadButton.Text = "Скачать";
                 LaunchButton.Text = "Запуск";
                 FolderSelection.Text = "Выберите папку с нужными страницами";
                 OutputFolderSelection.Text = "Выберите папку для вывода";
@@ -111,10 +105,13 @@ namespace EasyUpscaler
                 Description7.Text = "1x Шумодав ч/б. Для средне убитых сканов.";
                 Desсription8.Text = "1x Шумодав ч/б. Для сильно убитых сканов.";
                 Description9.Text = "2x Апскейлер ч/б. Рекомендуется для скорости.\r\nИспользовать без других моделек.";
+                Description10.Text = "Меняет размер изображения.";
                 JaNaiCheck.Text = "Использовать";
                 DigiCheck.Text = "Использовать";
                 DWTPcheck.Text = "Использовать";
                 ScreentoneCheck.Text = "Использовать";
+                SharpCheck.Text = "Использовать";
+                ResizeCheck.Text = "Использовать";
                 SaiyajinCheck.Text = "Использовать";
                 MJHQcheck.Text = "Использовать";
                 MJHQPcheck.Text = "Использовать";
@@ -126,35 +123,30 @@ namespace EasyUpscaler
                 groupBox3.Text = "Диапазон белого";
                 groupBox4.Text = "Диапазон чёрного";
                 groupBox5.Text = "Меню запуска";
+                groupBox6.Text = "Размер точек";
+                groupBox7.Text = "Размер";
+                groupBox8.Text = "Интерполяция";
+                groupBox9.Text = "По ширине?";
+                groupBox10.Text = "Проценты";
+                groupBox12.Text = "Разворот?";
+                groupBox11.Text = "Размер разворота";
+                groupBox15.Text = "Скачать зависимости";
+                tiletext.Text = "Выберите размер плитки";
                 label2.Text = "Важно!";
+                label4.Text = "Важно!";
+                label5.Text = "Перед началом работы установите зависимости.";
                 label1.Text = "После нажатия \"Запуск\", не закрывайте программу,\r\nпока не появится окно о завершении процесса.\r\n";
             }
-        }
-
-        private void Description2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Description3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
         }
 
         private async void LaunchButton_Click(object sender, EventArgs e)
         {
             if ((FolderBox.Text != "" && FolderBox2.Text != "") && (MJHQcheck.Checked || MJHQPcheck.Checked || MJLQcheck.Checked || SaiyajinCheck.Checked || JaNaiCheck.Checked || DWTPcheck.Checked || DigiCheck.Checked || MScaleCheck.Checked))
             {
+                if (tilesize.Text == "")
+                {
+                    tilesize.Text = "256";
+                }
                 LaunchButton.Hide();
 
                 string InputFolder = FolderBox.Text;
@@ -166,23 +158,24 @@ namespace EasyUpscaler
                 if (MJLQcheck.Checked) { modelsList.Add("1x-MangaJPEGLQ.pth"); }
                 if (SaiyajinCheck.Checked) { modelsList.Add("1x-SaiyaJin-DeJpeg.pth"); }
                 if (JaNaiCheck.Checked) { modelsList.Add("4x_IllustrationJaNai_V1_DAT2_190k.pth"); }
-                if (DWTPcheck.Checked) { modelsList.Add("4x_DWTP_DS_ATDl.pth"); }
+                if (DWTPcheck.Checked) { modelsList.Add("4x_DWTP_DS_dat2_v3_2.pth"); }
                 if (DigiCheck.Checked) { modelsList.Add("4x-eula-digimanga-bw-v2-nc1.pth"); }
                 if (MScaleCheck.Checked) { modelsList.Add("2x_MangaScaleV3.pth"); }
 
                 for (int i = 0; i < modelsList.Count; i++)
                 {
-                    string ModelPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "srcore", "models", modelsList[i]);
+                    string ModelPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "models", modelsList[i]);
                     var data = new
                     {
                         modelPath = ModelPath,
                         inputFolder = InputFolder,
                         outputFolder = OutputFolder,
+                        tileSize = int.Parse(tilesize.Text),
                     };
                     string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data1.json");
                     string jsonData = JsonConvert.SerializeObject(data, Newtonsoft.Json.Formatting.Indented);
                     File.WriteAllText(jsonFilePath, jsonData);
-                    string pythonScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "srcore", "api.py");
+                    string pythonScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "sr-core-main", "api.py");
                     string pythonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "python", "Python312", "python"); //изменение
 
                     ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -198,11 +191,22 @@ namespace EasyUpscaler
                         process.WaitForExit();
                     }
                 }
-                if (ScreentoneCheck.Checked)
+                if (ScreentoneCheck.Checked || SharpCheck.Checked || ResizeCheck.Checked)
                 {
-                    var processed = new List<object>
+                    var processed = new List<object>();
+
+                    if (ScreentoneCheck.Checked)
                     {
-                        new
+                        processed.Add(new
+                        {
+                            type = "screentone",
+                            dot_size = DotSizeBar.Value
+                        });
+                    }
+
+                    if (SharpCheck.Checked)
+                    {
+                        processed.Add(new
                         {
                             type = "sharp",
                             diapason_white = DiaWhiteBar.Value,
@@ -211,13 +215,24 @@ namespace EasyUpscaler
                             low_input = lowBar.Value,
                             gamma = 1.0,
                             cenny = true
-                        },
-                        new
+                        });
+                    }
+
+                    if (ResizeCheck.Checked)
+                    {
+                        processed.Add(new
                         {
-                            type = "screentone",
-                            dot_size = 7
-                        }
-                    };
+                            type = "resize",
+                            size = SizeCheck.Text,
+                            interpolation = InterBox.Text,
+                            width = WidthCheck.Text,
+                            percent = PercentBox.Text,
+                            spread = SpreadCheck.Text,
+                            spread_size = SpreadSize.Text,
+                            color_fix = false,
+                            gamma_correction = false
+                        });
+                    }
 
                     var JSONconfig = new
                     {
@@ -229,11 +244,10 @@ namespace EasyUpscaler
 
                     string json = JsonConvert.SerializeObject(JSONconfig, Newtonsoft.Json.Formatting.Indented);
 
-                    // Записываем JSON в файл
                     string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json");
                     File.WriteAllText(filePath, json);
 
-                    string screentoneScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "mangautils", "main.py");
+                    string screentoneScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "manga_utils-master", "main.py");
                     string pythonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "python", "Python312", "python"); //изменение
 
                     ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -253,26 +267,48 @@ namespace EasyUpscaler
                 LaunchButton.Show();
                 Process.Start("explorer.exe", OutputFolder);
             }
-            else if ((FolderBox.Text != "" && FolderBox2.Text != "") && (ScreentoneCheck.Checked))
+            else if ((FolderBox.Text != "" && FolderBox2.Text != "") && (ScreentoneCheck.Checked || SharpCheck.Checked || ResizeCheck.Checked))
             {
-                var processed = new List<object>
+                var processed = new List<object>();
+
+                if (ScreentoneCheck.Checked)
+                {
+                    processed.Add(new
                     {
-                        new
-                        {
-                            type = "sharp",
-                            diapason_white = DiaWhiteBar.Value,
-                            diapason_black = DiaBlackBar.Value,
-                            high_input = highBar.Value,
-                            low_input = lowBar.Value,
-                            gamma = 1.0,
-                            cenny = true
-                        },
-                        new
-                        {
-                            type = "screentone",
-                            dot_size = 7
-                        }
-                    };
+                        type = "screentone",
+                        dot_size = DotSizeBar.Value
+                    });
+                }
+
+                if (SharpCheck.Checked)
+                {
+                    processed.Add(new
+                    {
+                        type = "sharp",
+                        diapason_white = DiaWhiteBar.Value,
+                        diapason_black = DiaBlackBar.Value,
+                        high_input = highBar.Value,
+                        low_input = lowBar.Value,
+                        gamma = 1.0,
+                        cenny = true
+                    });
+                }
+
+                if (ResizeCheck.Checked)
+                {
+                    processed.Add(new
+                    {
+                        type = "resize",
+                        size = SizeCheck.Text,
+                        interpolation = InterBox.Text,
+                        width = WidthCheck.Text,
+                        percent = PercentBox.Text,
+                        spread = SpreadCheck.Text,
+                        spread_size = SpreadSize.Text,
+                        color_fix = false,
+                        gamma_correction = false
+                    });
+                }
 
                 var JSONconfig = new
                 {
@@ -288,7 +324,7 @@ namespace EasyUpscaler
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json");
                 File.WriteAllText(filePath, json);
 
-                string screentoneScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "mangautils", "main.py");
+                string screentoneScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "manga_utils-master", "main.py");
 
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = "python";
@@ -342,7 +378,7 @@ namespace EasyUpscaler
                     MessageBox.Show("You haven't selected any model!");
                 }
             }
-            
+
         }
 
         private void OpenButton2_Click(object sender, EventArgs e)
@@ -354,26 +390,6 @@ namespace EasyUpscaler
             }
             else
             { FolderBox.Text = "Вы ничего не выбрали!"; }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Procces_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
- 
-        }
-
-        private void label1_Click_3(object sender, EventArgs e)
-        {
-
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -409,7 +425,7 @@ namespace EasyUpscaler
 
         private void DiaWhite_TextChanged(object sender, EventArgs e)
         {
-            if ((int.TryParse(DiaWhite.Text, out int value) == true) && (int.Parse(DiaWhite.Text) >= -1) && (int.Parse(DiaWhite.Text) <= 10))
+            if ((int.TryParse(DiaWhite.Text, out int value) == true) && (int.Parse(DiaWhite.Text) >= -1) && (int.Parse(DiaWhite.Text) <= 255))
             {
                 DiaWhiteBar.Value = int.Parse(DiaWhite.Text);
             }
@@ -422,10 +438,46 @@ namespace EasyUpscaler
 
         private void DiaBlack_TextChanged(object sender, EventArgs e)
         {
-            if ((int.TryParse(DiaBlack.Text, out int value) == true) && (int.Parse(DiaBlack.Text) >= -1) && (int.Parse(DiaBlack.Text) <= 10))
+            if ((int.TryParse(DiaBlack.Text, out int value) == true) && (int.Parse(DiaBlack.Text) >= -1) && (int.Parse(DiaBlack.Text) <= 255))
             {
                 DiaBlackBar.Value = int.Parse(DiaBlack.Text);
             }
         }
+
+        private void DotSizeBar_Scroll(object sender, EventArgs e)
+        {
+            DotSize.Text = DotSizeBar.Value.ToString();
+        }
+
+        private void DotSize_TextChanged(object sender, EventArgs e)
+        {
+            if ((int.TryParse(DotSize.Text, out int value) == true) && (int.Parse(DotSize.Text) >= 1) && (int.Parse(DotSize.Text) <= 100))
+            {
+                DotSizeBar.Value = int.Parse(DotSize.Text);
+            }
+        }
+
+        private void ResizeCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (InterBox.Text == "")
+            {
+                InterBox.SelectedIndex = 0;
+            }
+            if (WidthCheck.Text == "")
+            {
+                WidthCheck.SelectedIndex = 0;
+            }
+            if (SpreadCheck.Text == "")
+            {
+                SpreadCheck.SelectedIndex = 0;
+            }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
     }
 }

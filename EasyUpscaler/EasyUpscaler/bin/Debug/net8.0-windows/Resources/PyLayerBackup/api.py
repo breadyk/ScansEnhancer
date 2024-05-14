@@ -9,8 +9,9 @@ with open("./data1.json", "r") as json_file:
 modelPath = data["modelPath"]
 inputFolder = data["inputFolder"]
 outputFolder = data["outputFolder"]
+tileSize = data["tileSize"]
 
 
-upscaler = Upscaler(modelPath, inputFolder, outputFolder, 256, "png")
+upscaler = Upscaler(modelPath, inputFolder, outputFolder, tileSize, "png")
 
 upscaler.run()
