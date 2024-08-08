@@ -1,22 +1,5 @@
-﻿using EasyUpscaler.Properties;
-using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+﻿using System.Diagnostics;
 using System.IO.Compression;
-using Newtonsoft.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace EasyUpscaler
 {
@@ -89,7 +72,7 @@ namespace EasyUpscaler
         private void modelsbutton_Click(object sender, EventArgs e)
         {
             modelsbutton.Hide();
-            string pipPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "python", "Python312", "Scripts", "pip"); //изменение
+            string pipPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "python", "Python312", "Scripts", "pip");
             string[] requirements =
             { "pepeline",
               "tqdm",
@@ -103,7 +86,6 @@ namespace EasyUpscaler
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo(pipPath);
 
-                //startInfo.Arguments = $"{pipPath} install -r {reqPath}";
                 startInfo.Arguments = $"install {requirements[i]}";
                 startInfo.RedirectStandardOutput = true;
                 startInfo.UseShellExecute = false;
@@ -162,7 +144,7 @@ namespace EasyUpscaler
 
         private void torchButton_Click(object sender, EventArgs e)
         {
-            if (GPUbox.Text =="")
+            if (GPUbox.Text == "")
             {
                 if (Lang == 1)
                 {
@@ -185,9 +167,9 @@ namespace EasyUpscaler
                     MessageBox.Show("This may take a while, DO NOT close the programm!");
                 }
 
-                string pipPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "python", "Python312", "Scripts", "pip3.exe"); //изменение
+                string pipPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "python", "Python312", "Scripts", "pip3.exe");
                 string torch;
-                if (GPUbox.Text =="Nvidia Geforce") { torch = "torch torchvision --index-url https://download.pytorch.org/whl/cu121"; }
+                if (GPUbox.Text == "Nvidia Geforce") { torch = "torch torchvision --index-url https://download.pytorch.org/whl/cu121"; }
                 else { torch = "torch torchvision"; }
 
                 ProcessStartInfo startInfo = new ProcessStartInfo(pipPath);
@@ -206,6 +188,11 @@ namespace EasyUpscaler
                 MessageBox.Show("Download completed.");
 
             }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

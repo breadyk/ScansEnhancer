@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj": {}
+    "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj": {
+    "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
+        "projectUniqueName": "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
         "projectName": "EasyUpscaler",
-        "projectPath": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
+        "projectPath": "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
         "packagesPath": "C:\\Users\\banio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\obj\\",
+        "outputPath": "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\banio\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -56,6 +51,10 @@
             "SharpCompress": {
               "target": "Package",
               "version": "[0.37.2, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [
@@ -77,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

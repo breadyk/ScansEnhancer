@@ -55,6 +55,22 @@
           "lib/net8.0/SharpCompress.dll": {}
         }
       },
+      "SixLabors.ImageSharp/3.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/SixLabors.ImageSharp.props": {}
+        }
+      },
       "System.CodeDom/6.0.0": {
         "type": "package",
         "compile": {
@@ -167,6 +183,22 @@
         "sharpcompress.nuspec"
       ]
     },
+    "SixLabors.ImageSharp/3.1.5": {
+      "sha512": "lNtlq7dSI/QEbYey+A0xn48z5w4XHSffF8222cC4F4YwTXfEImuiBavQcWjr49LThT/pRmtWJRcqA/PlL+eJ6g==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/3.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.1.5.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
     "System.CodeDom/6.0.0": {
       "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
       "type": "package",
@@ -214,7 +246,8 @@
     "net8.0-windows7.0": [
       "DynamicLanguageRuntime >= 1.3.4",
       "Newtonsoft.Json >= 13.0.3",
-      "SharpCompress >= 0.37.2"
+      "SharpCompress >= 0.37.2",
+      "SixLabors.ImageSharp >= 3.1.5"
     ]
   },
   "packageFolders": {
@@ -223,11 +256,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
+      "projectUniqueName": "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
       "projectName": "EasyUpscaler",
-      "projectPath": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
+      "projectPath": "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\EasyUpscaler.csproj",
       "packagesPath": "C:\\Users\\banio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\banio\\source\\repos\\EasyUpscaler\\EasyUpscaler\\obj\\",
+      "outputPath": "C:\\Users\\banio\\Documents\\progs\\EasyUpscaler\\EasyUpscaler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\banio\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -250,11 +283,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -272,6 +300,10 @@
           "SharpCompress": {
             "target": "Package",
             "version": "[0.37.2, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[3.1.5, )"
           }
         },
         "imports": [
@@ -293,7 +325,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
