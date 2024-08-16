@@ -1,4 +1,4 @@
-# Scans Enhanser
+# Scans Enhanсer
 ![MainMenu](https://imgdb.net/storage/uploads/5830a13e53fd848eb21b9425a152716e3818e497d8bbb68467532f5fb92f897c.png)
 >App that makes enhancing manga/comic scans easier by combining various upscaling models.
 ## GPU Support
